@@ -1,6 +1,11 @@
 # snap-bbox
 > Snap a Bounding Box to a Grid
 
+| before | after |
+| ------ | ----- |
+| the bounding box partially cuts off some of the pixel grid cells | the bounding box expands to the pixel grid cell bounadries |
+| ![before](https://github.com/DanielJDufour/snap-bbox/raw/main/before.png) | ![before](https://github.com/DanielJDufour/snap-bbox/raw/main/after.png) |
+
 # why
 I often try to pull pixel values from GeoTIFFs to display on a web map.
 However, the pixels are often displayed in a different projection (like web mercator)
