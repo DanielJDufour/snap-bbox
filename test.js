@@ -9,4 +9,13 @@ test("chattanooga", ({ eq }) => {
     scale: [0.083333333333333, -0.083333333333333],
   });
   console.log("result:", result);
+  eq(result, {
+    bbox_in_coordinate_system: [
+      -85.41666666666706,
+      35.00000000000022,
+      -85.25000000000038,
+      35.083333333333556
+    ],
+    bbox_in_grid_cells: [ 1135, 660, 1137, 659 ]
+  });
 });
