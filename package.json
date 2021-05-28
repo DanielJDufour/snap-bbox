@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "flug": "^1.1.0"
-  },
   "name": "snap-bbox",
   "description": "Snap a Bounding Box to a Grid",
   "version": "0.0.0",
@@ -27,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/DanielJDufour/snap-bbox/issues"
   },
-  "homepage": "https://github.com/DanielJDufour/snap-bbox#readme"
+  "homepage": "https://github.com/DanielJDufour/snap-bbox#readme",
+  "devDependencies": {
+    "flug": "^1.1.0"
+  }  
 }
