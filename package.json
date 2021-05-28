@@ -1,0 +1,31 @@
+{
+  "devDependencies": {
+    "flug": "^1.1.0"
+  },
+  "name": "snap-bbox",
+  "description": "Snap a Bounding Box to a Grid",
+  "version": "0.0.0",
+  "main": "snap-bbox.js",
+  "scripts": {
+    "format": "npx prettier --arrow-parens=avoid --write *.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJDufour/snap-bbox.git"
+  },
+  "keywords": [
+    "ascii",
+    "geospatial",
+    "geotiff",
+    "gis",
+    "grid",
+    "snap"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/DanielJDufour/snap-bbox/issues"
+  },
+  "homepage": "https://github.com/DanielJDufour/snap-bbox#readme"
+}
