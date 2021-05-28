@@ -32,7 +32,7 @@ const result = snap({
   origin: [-180, 90],
 
   // the size of each grid cell in [width, height]
-  // width or height can be negative, which indicates that
+  // width or height can be negative, which in the case below indicates that
   // the y value in the spatial reference system (e.g. latitude) decreases
   // as the y-value in cell grid space increases
   // This is equivalent to the ModelPixelScaleTag in GeoTIFF Metadata
