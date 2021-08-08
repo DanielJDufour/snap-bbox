@@ -31,6 +31,14 @@ const result = snap({
   // example below is the north pole, [180th meridian, top of the world]
   origin: [-180, 90],
 
+  // an optional array of two numbers, which represents
+  // x-padding (horizontal) and y-padding (vertical)
+  // the padding is applied to both sides of the bbox along an axis.
+  // in the example below with x-padding of 3 and y-padding of 0,
+  // the width of the result will increase by 6 grid cells, being padded
+  // on both the left and right by 3 grid cells.
+  padding: [3, 0],
+
   // the size of each grid cell in [width, height]
   // width or height can be negative, which in the case below indicates that
   // the y value in the spatial reference system (e.g. latitude) decreases

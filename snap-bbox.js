@@ -1,13 +1,18 @@
-module.exports = ({ bbox, debug, origin, scale }) => {
+module.exports = ({ bbox, debug, origin, padding, scale }) => {
   if (debug) console.log("[snap-bbox] starting");
   if (debug) console.log("[snap-bbox] bbox:", bbox);
   if (debug) console.log("[snap-bbox] debug:", debug);
   if (debug) console.log("[snap-bbox] origin:", origin);
+  if (debug) console.log("[snap-bbox] padding:", padding);
   if (debug) console.log("[snap-bbox] scale:", scale);
 
   const [originX, originY] = origin;
   if (debug) console.log("[snap-bbox] originX:", originX);
   if (debug) console.log("[snap-bbox] originY:", originY);
+
+  const [padX, padY] = padding || [0, 0];
+  if (debug) console.log("[snap-bbox] padX:", padX);
+  if (debug) console.log("[snap-bbox] padY:", padY);
 
   const [scale_x, scale_y] = scale;
   if (debug) console.log("[snap-bbox] scale_x:", scale_x);
@@ -29,10 +34,10 @@ module.exports = ({ bbox, debug, origin, scale }) => {
   if (debug) console.log("[snap-bbox] bottom:", bottom);
 
   // we're rounding here, so we don't ask for half a pixel
-  const left_int = Math.floor(left);
-  const right_int = Math.ceil(right);
-  const top_int = Math.floor(top);
-  const bottom_int = Math.ceil(bottom);
+  const left_int = Math.floor(left) - padX;
+  const right_int = Math.ceil(right) + padX;
+  const top_int = Math.floor(top) + padY;
+  const bottom_int = Math.ceil(bottom) - padY;
   if (debug) console.log("[snap-bbox] left_int:", left_int);
   if (debug) console.log("[snap-bbox] right_int:", right_int);
   if (debug) console.log("[snap-bbox] top_int:", top_int);
