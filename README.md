@@ -54,13 +54,13 @@ result is
 {
   bbox_in_coordinate_system: [
     // xmin (longitude in this case)
-    -85.41666666666706,
+    -85.66666666666706,
 
     // ymin (latitude in this case)
     35.00000000000022,
 
     // xmax (longitude in this case)
-    -85.25000000000038,
+    -85.00000000000038,
 
     // ymax (latitude in this case)
     35.083333333333556
@@ -68,13 +68,13 @@ result is
 
   bbox_in_grid_cells: [
     // xmin, the number of grid cells from the left edge of the grid
-    1135,
+    1132,
 
     // ymin, the number of grid cells from the top edge of the grid
     660,
 
     // xmax, the number of grid cells from the left edge of the grid
-    1137,
+    1140,
 
     // ymax, the number of grid cells from the top edge of the grid
     659
