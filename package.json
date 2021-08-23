@@ -1,7 +1,7 @@
 {
   "name": "snap-bbox",
   "description": "Snap a Bounding Box to a Grid",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "snap-bbox.js",
   "files": [
     "snap-bbox.js"
