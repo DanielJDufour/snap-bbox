@@ -31,6 +31,14 @@ const result = snap({
   // example below is the north pole, [180th meridian, top of the world]
   origin: [-180, 90],
 
+  // the size of each grid cell in [width, height]
+  // width or height can be negative, which in the case below indicates that
+  // the y value in the spatial reference system (e.g. latitude) decreases
+  // as the y-value in cell grid space increases
+  // This is equivalent to the ModelPixelScaleTag in GeoTIFF Metadata
+  // http://geotiff.maptools.org/spec/geotiff2.6.html
+  scale: [0.083333333333333, -0.083333333333333],
+
   // an optional array of two numbers, which represents
   // x-padding (horizontal) and y-padding (vertical)
   // the padding is applied to both sides of the bbox along an axis.
@@ -39,13 +47,9 @@ const result = snap({
   // on both the left and right by 3 grid cells.
   padding: [3, 0],
 
-  // the size of each grid cell in [width, height]
-  // width or height can be negative, which in the case below indicates that
-  // the y value in the spatial reference system (e.g. latitude) decreases
-  // as the y-value in cell grid space increases
-  // This is equivalent to the ModelPixelScaleTag in GeoTIFF Metadata
-  // http://geotiff.maptools.org/spec/geotiff2.6.html
-  scale: [0.083333333333333, -0.083333333333333]
+  // another bbox that limits how much "bbox" can be expanded via snapping and padding
+  // in the example below, we contain the result to the northern hemisphere
+  container: [ -180, 0, 180, 90 ]
 });
 ```
 result will be something like:

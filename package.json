@@ -7,7 +7,7 @@
     "snap-bbox.js"
   ],
   "scripts": {
-    "format": "npx prettier --arrow-parens=avoid --write *.js",
+    "format": "npx prettier --arrow-parens=avoid --trailing-comma=none --write *.js",
     "test": "node test.js"
   },
   "repository": {
