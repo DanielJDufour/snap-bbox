@@ -88,7 +88,7 @@ result will be something like:
 ## advanced precise mode
 If you require the highest level of precision, you can use snap-bbox in "precise" mode.
 Precise mode avoids floating point arithmetic issues.  When using precise mode,
-all numbers must be passed in as numerical strings and all qoutput numbers will be
+all numbers must be passed in as numerical strings and all output numbers will be
 represented as strings. snap-bbox uses [preciso](https://github.com/DanielJDufour/preciso)
 for precise numerical computations.
 ```js
