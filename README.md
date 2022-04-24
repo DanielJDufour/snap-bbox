@@ -6,18 +6,18 @@
 | the bounding box partially cuts off some of the pixel grid cells | the bounding box expands to the pixel grid cell boundaries |
 | ![before](https://github.com/DanielJDufour/snap-bbox/raw/main/before.png) | ![before](https://github.com/DanielJDufour/snap-bbox/raw/main/after.png) |
 
-# why
+## why
 I often try to pull pixel values from GeoTIFFs to display on a web map.
 However, the pixels are often displayed in a different projection (like web mercator)
 than the projection of the data (often 4326).
 Because our pixels are in a structured array and you can't request only part of an array item (try running `[1, 2, 3][0.5]`), we have to snap our bounding box to the grid structure of our data.
 
-# install
+## install
 ```bash
 npm install snap-bbox
 ```
 
-# usage
+## basic usage
 ```js
 const snap = require("snap-bbox");
 
@@ -54,7 +54,6 @@ const result = snap({
 ```
 result will be something like:
 ```js
-result is
 {
   bbox_in_coordinate_system: [
     // xmin (longitude in this case)
@@ -82,6 +81,45 @@ result is
 
     // ymax, the number of grid cells from the top edge of the grid
     659
+  ]
+}
+```
+
+## advanced precise mode
+If you require the highest level of precision, you can use snap-bbox in "precise" mode.
+Precise mode avoids floating point arithmetic issues.  When using precise mode,
+all numbers must be passed in as numerical strings and all qoutput numbers will be
+represented as strings. snap-bbox uses [preciso](https://github.com/DanielJDufour/preciso)
+for precise numerical computations.
+```js
+// you can also directly require the precise snapping function
+// with require("snap-bbox/lib/snap-precise-bbox.js")
+// but this filepath is subject to change between versions
+const snap = require("snap-bbox");
+
+const result = snap({
+  bbox: [ "-85.341796875", "35.02999636902566", "-85.2978515625", "35.06597313798418" ],
+  origin: ["-180", "90"],
+  scale: ["0.083333333333333", "-0.083333333333333"],
+  padding: ["3", "0"],
+  container: ["-180", "0", "180", "90"],
+  precise: true
+});
+```
+result will use precise numerical strings:
+```js
+{
+  bbox_in_coordinate_system: [
+    "-85.666666666667044",
+    "35.00000000000022",
+    "-85.00000000000038",
+    "35.083333333333553"
+  ],
+  bbox_in_grid_cells: [
+    "1132",
+    "660",
+    "1140",
+    "659"
   ]
 }
 ```
