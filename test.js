@@ -20,7 +20,7 @@ test("chattanooga", ({ eq }) => {
     bbox_in_coordinate_system: [-85.41666666666706, 35.00000000000022, -85.25000000000038, 35.083333333333556],
     bbox_in_grid_cells: [1135, 660, 1137, 659]
   });
-  eq(snap({ ...convert(params), debug: true, precise: true }), {
+  eq(snap({ ...convert(params), debug: false, precise: true }), {
     bbox_in_coordinate_system: [
       "-85.416666666667045",
       "35.00000000000022",
