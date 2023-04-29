@@ -105,3 +105,4 @@ dist
 
 *.tif
 pnpm-lock.yaml
+*bak*
