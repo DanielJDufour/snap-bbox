@@ -5,6 +5,7 @@ export interface SnapOptions {
     padding?: [number, number];
     container?: [number, number, number, number];
     precise?: false;
+    debug?: boolean;
 }
 
 export interface SnapOptionsPrecise {
@@ -14,6 +15,7 @@ export interface SnapOptionsPrecise {
     padding?: [string, string];
     container?: [string, string, string, string];
     precise: true;
+    debug?: boolean;
 }
 
 export interface SnapResultPrecise {
