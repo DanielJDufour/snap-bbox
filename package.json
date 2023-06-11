@@ -5,9 +5,11 @@
   "main": "lib/index.js",
   "files": [
     "lib/index.js",
+    "lib/index.d.ts",
     "lib/snap-bbox.js",
     "lib/snap-precise-bbox.js"
   ],
+  "types": "lib/index.d.ts",
   "scripts": {
     "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js lib/*.js",
     "test": "node test.js"
