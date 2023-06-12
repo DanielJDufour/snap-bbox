@@ -11,8 +11,10 @@
   ],
   "types": "lib/index.d.ts",
   "scripts": {
-    "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js lib/*.js",
-    "test": "node test.js"
+    "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js *.ts lib/*.js",
+    "test": "npm run test:js && npm run test:ts",
+    "test:js": "node test.js",
+    "test:ts": "npx ts-node test.ts"
   },
   "repository": {
     "type": "git",
