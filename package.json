@@ -35,9 +35,9 @@
   },
   "homepage": "https://github.com/DanielJDufour/snap-bbox#readme",
   "devDependencies": {
-    "flug": "^1.1.0"
+    "flug": "^2.6.0"
   },
   "dependencies": {
-    "preciso": "^0.4.1"
+    "preciso": "^0.12.0"
   }
 }
