@@ -141,3 +141,76 @@ test("container", ({ eq }) => {
     bbox_in_grid_cells: [0, 256, 256, 0]
   });
 });
+
+test("size", ({ eq }) => {
+  const result = snap({
+    bbox: [-25.074840062000003, 36.90779426, -24.888811195, 37.115705198],
+    debug: false,
+    origin: [-33.4, 41],
+    overflow: false,
+    scale: [0.09999999999999433, -0.09999999999999433],
+    size: [125, 40],
+    precise: false
+  });
+  eq(result, {
+    bbox_in_coordinate_system: [-25.10000000000047, 37.00000000000023, -24.800000000000487, 37.200000000000216],
+    bbox_in_grid_cells: [83, 40, 86, 38]
+  });
+});
+
+test("size (precise)", ({ eq }) => {
+  const result = snap({
+    bbox: ["-25.074840062000003", "36.90779426", "-24.888811195", "37.115705198"],
+    debug: false,
+    origin: ["-33.4", "41"],
+    overflow: false,
+    scale: ["0.09999999999999433", "-0.09999999999999433"],
+    size: ["125", "40"],
+    precise: true
+  });
+  eq(result, {
+    bbox_in_coordinate_system: [
+      "-25.10000000000047061",
+      "37.0000000000002268",
+      "-24.80000000000048762",
+      "37.20000000000021546"
+    ],
+    bbox_in_grid_cells: ["83", "40", "86", "38"]
+  });
+});
+
+test("overflow", ({ eq }) => {
+  let msg;
+  try {
+    snap({
+      bbox: [-25.074840062000003, 26.90779426, -24.888811195, 27.115705198],
+      debug: false,
+      origin: [-33.4, 41],
+      overflow: false,
+      scale: [0.09999999999999433, -0.09999999999999433],
+      size: [125, 40],
+      precise: false
+    });
+  } catch (error) {
+    msg = error.message;
+  }
+  eq(msg, "[snap-bbox] bbox doesn't intersect the grid");
+});
+
+test("overflow (precise)", ({ eq }) => {
+  let msg;
+  try {
+    snap({
+      bbox: ["-25.074840062000003", "26.90779426", "-24.888811195", "27.115705198"],
+      debug: false,
+      origin: ["-33.4", "41"],
+      overflow: false,
+      scale: ["0.09999999999999433", "-0.09999999999999433"],
+      size: ["125", "40"],
+      precise: true
+    });
+  } catch (error) {
+    msg = error.message;
+  }
+  eq(msg, "[snap-bbox] bbox doesn't intersect the grid");
+});

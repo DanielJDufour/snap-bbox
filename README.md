@@ -123,3 +123,13 @@ result will use precise numerical strings:
   ]
 }
 ```
+
+## limiting to edge of finite grid
+If the grid has a fixed height and width, you can limit the result to the boundary of the grid
+```js
+snap({
+  ...options,
+  size: [width, height],
+  overflow: false // prevent overflow over the boundaries of the grid
+});
+```
